@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='bootstrap.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+    <title>Translator</title>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg" style="background-color:blue">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><img src="{{ url_for('static',filename='icon.png') }}" alt="loading"></a>
+    <button id="white" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <span id="w" class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarScroll">
+      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+        <li class="nav-item">
+          <a  id ="a" style="color:white; font-size:25px;" class="nav-link active" aria-current="page" href="home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a  id ="a" style="color:white; font-size:25px;" class="nav-link active" aria-current="page" href="feed">FeedBack</a>
+        </li>
+                <li class="nav-item">
+          <a id ="a" style="color:white; font-size:25px;" class="nav-link active" aria-current="page" href="">AboutUs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <center>
+        <div class="jumbotron" style='min-height:370px; height:auto; width:500px;'>
+          <br>
+          <div class="textarea" style="background-color:white; width:460px;">
+            <span>{{ text }}</span>
+          </div>
+          <br>
+          <form action='/down' method="POST">
+            <center><button id ="b1" type="submit">Download</button></center>
+          </form>
+        </div>
+    </center>
+</body>
+</html>

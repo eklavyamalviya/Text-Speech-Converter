@@ -1,0 +1,33 @@
+<html>
+<head>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+</head>
+<body>
+<form action="" method="post" id="selectDevice" name="device">
+    {{ form.hidden_tag() }}
+    <p>
+        Nummber of Devices: {{ form.selectAmount(size=1) }}
+        Select device: {{form.deviceAddress() }}
+    </p>
+</form>
+<script type="text/javascript" charset="utf-8">
+    $("#deviceAddress").click(function(){
+        $.ajax({
+            url: '/selectform',
+            type: 'POST',
+            data: $('#selectDevice').serialize(),
+            success: function(selectOptions){
+                $("#deviceAddress").empty();
+                for (var i = 0; i < selectOptions.length; i++){
+                    $("#deviceAddress").append(
+                        $("<option></option>")
+                        .attr("value", selectOptions[i][0])
+                        .text(selectOptions[i][1])
+                    );
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>

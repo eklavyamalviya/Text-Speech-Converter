@@ -1,0 +1,17 @@
+body{
+    margin: 0;
+    padding:5;
+    /* background-image: url("img1.jpg"); */
+    font-family: Arial;
+}
+
+
+.download{ 
+    background-size: contain;
+    width: 30%;
+    background-color: orangered;
+    align-items: center;
+}
+.img{
+    max-width: 2px;
+}

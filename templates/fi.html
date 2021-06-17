@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HTML Backgorund Color</title>
+   <link rel="stylesheet" href="{{ url_for('static',filename='bootstrap.css') }}">
+   <link rel="stylesheet"  href="{{ url_for('static',filename='style.css') }}">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background-color:white ;
+}
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #0000FF;
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: red;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: ##ffffff;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #0000FF;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+
+<nav class="navbar navbar-expand-lg" style="background-color:blue">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><img src="{{ url_for('static',filename='logo.png') }}" alt="loading"></a>
+    <button id="white" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <span id="w" class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarScroll">
+      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+        <li class="nav-item">
+          <a  id ="a" style="color:white; font-size:25px;" class="nav-link active" aria-current="page" href="home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a  id ="a" style="color:white; font-size:25px;" class="nav-link active" aria-current="page" href="feed">FeedBack</a>
+        </li>
+                <li class="nav-item">
+          <a id ="a" style="color:white; font-size:25px;" class="nav-link active" aria-current="page" href="about">AboutUs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<p><center><font size="+4">TEXT-SPEECH RECOGNISER.</font></center></p>
+</div>
+<br>
+<div class="about-section">
+
+<center><font size="+4"><p style="color:white">ABOUT US.</font></center></p>
+
+<p>Here we can covert our text file to audio file in the required language and vice versa.</p>
+</div></p>
+ 
+
+<h2 style="text-align:center"><center>Let's have a look</center></h2>
+<center>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <h2><center>Text-Speech Recogniser!</center></h2>
+        <p class="title"><center>PIEMR</center></p>
+        <p><center>It will help you to convert text into audio and audio into text in required language!</center>.</p>
+        <p><center>emailid@gmail.com</center></p>
+        <p><button class="button"><p style="color:black">Contact</button></p>
+      </div>
+    </div>
+  </div>
+</div>
+</center>  
+
+
+</body>
+</html>

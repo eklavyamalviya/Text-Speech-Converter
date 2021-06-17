@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{{ url_for('static',filename='bootstrap.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>                       
+</head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 70%;*/
+  padding: 12px;
+  border: 1px solid rgb(70, 68, 68);
+  border-radius: 4px;
+  resize: vertical;
+}
+input[type=email], select, textarea {
+  width: 70%;*/
+  padding: 12px;
+  border: 1px solid rgb(70, 68, 68);
+  border-radius: 4px;
+  resize: vertical;
+}
+
+
+label {
+ padding: 12px 12px 12px 0;
+  display: inline-block;
+  color:white;
+
+}
+
+input[type=submit] {
+  background-color: white;
+  color: black;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+}
+
+input[type=submit]:hover {
+  background-color: grey;
+  color:Back;
+}
+
+.container {
+    text-align:center;
+   width:60%; 
+  border-radius: 25px;
+  background-color:#8F00FF;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+ width: 20%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+ width: 65%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+</style>
+<style>
+  * {
+box-sizing: border-box;
+}
+/* Add a gray background color with some padding */
+body {
+ font-family: Arial;
+ /* padding: 20px;*/
+ /* background: #f1f1f1;*/
+}
+/* Header/Blog Title */
+.header {
+  overflow: hidden;
+  background-color:#8F00FF;
+  padding: 20px 10px;
+}
+
+.header a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header a.logo {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+/*
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}*/
+
+.header-right {
+  float: right;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 68%;
+  text-align: center;
+  padding-right:50px;
+}
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 32%;
+  padding-right:50px;
+}
+/* Clear floats after the columns */
+
+/*                FOOTER                   */
+.list{
+  text-align: center;
+  padding-top:50px;
+
+}
+
+.ic{
+  margin-right: 48px;
+}
+.footer{
+  padding:0px;
+  background-color:#8F00FF;
+
+}
+.sub-footer{
+  padding:8px;
+  margin-top :58px;
+  text-align: center;
+  background-color:#ffef96 ;
+}
+.fab {
+  color:white;
+  text-align: center;
+  text-decoration: none;
+  transition: all .4s;
+}
+.fab:hover {
+    background-color: #333;
+    border:2px double #333;
+    opacity: .9;
+    transform: rotate(360deg);
+    box-shadow: 2px 2px 24px #fff;
+}
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    
+}
+.modal-content0 {
+  background-color: #F0F3F4;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 90%;
+  /* Could be more or less, depending on screen size */
+}
+.ic{
+  margin-right: 12px;
+}
+
+.jumbotron{
+  height: auto;
+  width: auto;
+}
+
+.textarea{
+  height: auto;
+  width: auto;
+}
+}
+@media screen and (min-width: 800px) {
+  .jumbotron{
+  height: auto;
+  width: auto;
+}
+
+.textarea{
+  height: auto;
+  width: auto;
+}
+  }
+
+</style>
+</head>
+
+<body>
+ 
+<div class="header">
+  <a class="logo">Text-Speech Converter</a>
+  <div class="header-right">
+    <a href="home">Home</a>
+    <a href="feed">FeedBack</a>
+    <a href="about">About Us</a>
+  </div>
+</div>
+
+
+
+<div class="row" style="background-color:white; min-height:570px;">
+<h2 id="h">                      FEEDBACK FORM              </h2>
+<div class="container">
+  <form>
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">First Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="fname" name="first_Name" placeholder="Your Name..">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">Last Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-25">
+          <label for="email">Mail Id</label>
+        </div>
+        <div class="col-75">
+          <input type="email" id="email" name="mailid" placeholder="Your mail id..">
+        </div>
+      </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="country">Country</label>
+      </div>
+      <div class="col-75">
+        <select id="country" name="country">
+            <option value="none">Select Country</option>
+          <option value="australia">Australia</option>
+          <option value="canada">Canada</option>
+          <option value="usa">USA</option>
+          <option value="russia">Russia</option>
+          <option value="japan">Japan</option>
+          <option value="india">India</option>
+          <option value="china">China</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="feed_back">Feed Back</label>
+      </div>
+      <div class="col-75">
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+      </div>
+    </div>
+    <div class="row"> <center> <input type="submit" value="Submit">    </center>
+         </div>
+  </form>
+</div>
+</div>
+<br><br>
+<!-- Footer -->
+<footer class="footer">
+  <div class="list">
+     <a class="ic">
+            <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!-- Twitter -->
+          <a class="ic">
+            <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!-- Google +-->
+          <a class="ic">
+            <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!--Linkedin -->
+          <a class="ic">
+            <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!--Instagram-->
+          <a class="ic">
+            <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!--Pinterest-->
+          <a class="ic">
+            <i class="fab fa-pinterest fa-lg white-text fa-2x"> </i>
+          </a>
+          <br>
+  </div>
+   <br>
+    <br>
+</footer>
+
+
+
+</body>
+</html>

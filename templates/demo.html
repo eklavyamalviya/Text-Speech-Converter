@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type=text/javascript src="{{
+  url_for('static', filename='jquery.js') }}"></script>
+ <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+ <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="{{  url_for('static', filename='jquery.js') }}">\x3C/script>')</script>
+<script type = "text/javascript" >
+   $(window).on('popstate', function(e) {
+  var lastEntry = customHistory.pop();
+  history.pushState(lastEntry.data, lastEntry.title, lastEntry.location);
+  // load the last entry
+});
+</script>
+
+</head>
+<style>
+  * {
+box-sizing: border-box;
+}
+/* Add a gray background color with some padding */
+body {
+ font-family: Arial;
+ /* padding: 20px;*/
+  background: #f1f1f1;
+}
+/* Header/Blog Title */
+.header {
+  overflow: hidden;
+  background-color:#8F00FF;
+  padding: 20px 10px;
+}
+
+.header a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header a.logo {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.header a:hover {
+  text-decoration:underline;
+ }
+
+.header a.active {
+  color: white;
+}
+
+a.bottom
+{
+    position: relative;
+}
+
+a.bottom:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #FFF;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+a.bottom:hover:before {
+  visibility: visible;
+  height: 3px;
+}
+.header-right {
+  float: right;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 68%;
+  text-align: center;
+  padding-right:50px;
+}
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 32%;
+  padding-right:50px;
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+
+}
+
+.cancelbtn {
+  width: 100%;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+button:hover {
+  opacity: 0.8;
+}
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: 100%;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 13px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display:none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 100%;
+  /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+.modal-content0 {
+  background-color: #F0F3F4;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 40%;
+  /* Could be more or less, depending on screen size */
+}
+
+.cancelbtn {
+  padding: 14px 20px;
+  background-color:red;
+}
+
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 100%;
+
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+/*                FOOTER                   */
+.list{
+  text-align: center;
+  padding-top:50px;
+
+}
+
+.ic{
+  margin-right: 48px;
+}
+.footer{
+  padding:0px;
+  background-color:#8F00FF;
+
+}
+.sub-footer{
+  padding:8px;
+  margin-top :58px;
+  text-align: center;
+  background-color:#ffef96 ;
+}
+.fab {
+  color:white;
+  text-align: center;
+  text-decoration: none;
+  transition: all .4s;
+}
+.fab:hover {
+    background-color: #333;
+    border:2px double #333;
+    opacity: .9;
+    transform: rotate(360deg);
+    box-shadow: 2px 2px 24px #fff;
+}
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    
+}
+.modal-content0 {
+  background-color: #F0F3F4;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 90%;
+  /* Could be more or less, depending on screen size */
+}
+.ic{
+  margin-right: 12px;
+}
+
+}
+
+</style>
+
+</head>
+<body>
+ 
+<div class="header">
+  <a class="logo">Text-Speech Converter</a>
+  <div class="header-right">
+    <a class="active" href="home">Home</a>
+    <a href="feed">FeedBack</a>
+    <a href="about">About Us</a>
+  </div>
+</div>
+
+<div class="row" style="background-color:white; ">
+  <div class="leftcolumn">
+    <center><h1>Conversion</h1></center>
+        <div class="dis" style="width:95%; height:650px; background-color:white; border: 1px solid rgba(81, 203, 238, 1); padding-right:120px; float:right;">
+          <img src="{{ url_for('static',filename='ekl.png') }}" alt="Cloudy Sky" style="width:860px; height: 100%;">
+        </div>
+     
+</div>
+<div class="rightcolumn">
+  <div class="card">
+    <center><h1>Content</h1></center>
+      <form class="modal-content animate" id='contact-form' action="/audio" method="post" style="height:650px;">
+        <div class="imgcontainer">
+          <img src="{{ url_for('static',filename='logo.png') }}" alt="Avatar" class="avatar">
+        </div>
+
+        <div class="container">
+          <hr>
+          
+          <form action="/audio">
+           
+                        
+            
+          <label for="uname"><b>Link</b></label>
+         <input type="text" placeholder="Paste your link here..." name="link">
+          <br><br>
+
+          <center><label><b>OR</b></label></center>
+          <br>
+
+          <label><b>Select File:</b></label>
+          <input type="file" accept="audio/*" name="audio">
+          <br>
+          <hr>
+          <br>
+          <label for="uname"><b>Select Language</b></label>
+          <select id="Language-option" name="lang">
+                   <option >Select Language</option>
+                   {% for i,j in sdata %}
+                    <option value="{{ i }}">{{ j }}</option>
+                   {% endfor %}
+               </select>
+           <br>
+           <hr>
+
+            <label><b>Select Format</b></label>
+            <select name = "for">
+                   <option >Select Format</option>
+                   <option value="voice">Voice</option>
+                   <option value="text">Text</option>                  
+               </select>
+            <br>
+            <hr>
+
+           
+          <button id='btn' type="submit">CONVERT</button>
+        </form>
+        <form action='/home'>  
+         <button class="cancelbtn" type="submit">RESET</button>
+        </form>
+        </div>
+      </form>
+    
+  </div>
+</div>
+<hr>
+
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="list">
+     <a class="ic">
+            <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!-- Twitter -->
+          <a class="ic">
+            <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!-- Google +-->
+          <a class="ic">
+            <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!--Linkedin -->
+          <a class="ic">
+            <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!--Instagram-->
+          <a class="ic">
+            <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!--Pinterest-->
+          <a class="ic">
+            <i class="fab fa-pinterest fa-lg white-text fa-2x"> </i>
+          </a>
+          <br>
+  </div>
+   <br>
+    <br>
+</footer>
+</body>
+</html>
